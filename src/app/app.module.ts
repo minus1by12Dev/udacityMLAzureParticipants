@@ -1,16 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { ChloropethChartComponent } from './components/chloropeth-chart/chloropeth-chart.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    DashboardComponent,
+    ChloropethChartComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [DashboardComponent]
 })
 export class AppModule { }
