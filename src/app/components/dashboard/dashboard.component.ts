@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { EMPTY, Observable } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+
+import { DataService } from 'src/app/services/data.service';
+import { ICountryCount } from 'src/app/models/ICountryCount';
 
 @Component({
   selector: 'pd-dashboard',
@@ -7,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  countryCount$: Observable<ICountryCount[]>;
+  errorMessage = '';
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.countryCount$ = this.dataService.countryCount$
+      .pipe(
+        tap(data => console.log(data)),
+        catchError(err => {
+          this.errorMessage = err;
+          return EMPTY;
+        })
+      )
   }
 
 }

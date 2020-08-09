@@ -4,3 +4,56 @@ html, body {
   font-family: 'Roboto', sans-serif;
   padding: 1rem 2rem;
 }
+
+
+/** Histogram CSS **/
+
+.histo {
+  position: relative;
+}
+
+.countryToolTip {
+  background-color : #efefef;
+  border : 1px solid #ccc;
+  border-radius : 5px;
+  padding : 5px;
+  width : 160px;
+  height : 40px;
+  font-size: 12px;
+
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+}
+
+.histoXAxisGroup .tick line {
+  visibility : hidden;
+}
+
+.histoXAxisGroup .domain, .histoYAxisGroup .domain{
+  visibility : hidden;
+}
+
+.histoXAxisGroup {
+  text-anchor: start !important;
+}
+
+.histoXAxisGroup .tick text{
+  color: #222;
+  font-size: 11px;
+}
+
+.histoYAxisGroup .tick text{
+  color: #acacac;
+}
+
+.histoYAxisGroup .tick:first-child {
+  opacity: 0;
+}
+
+
+/**** Chloro CSS ***/
+
+.chloroLegendText {
+  font-size: 12px;
+  fill: #999;
+}

@@ -2,6 +2,9 @@
   <h2>Microsoft Scholarship Foundation course Nanodegree Program</h2>
 </header>
 <main>
-  <pd-chloropeth-chart></pd-chloropeth-chart>
+  <ng-container *ngIf = "countryCount$ | async as countryCount">
+    <pd-histogram [consumptionData] = countryCount ></pd-histogram>
+    <pd-chloropeth-chart [consumptionData] = countryCount ></pd-chloropeth-chart>
+  </ng-container>
 </main>
 
